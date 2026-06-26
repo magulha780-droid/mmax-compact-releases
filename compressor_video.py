@@ -354,7 +354,7 @@ class VideoCompressorApp:
         # CPU
         _, ic = self._section(parent, "USO DA CPU", row=2)
         cpu_count = os.cpu_count() or 4
-        tk.Label(ic, text="Controla quantos nucleos o ffmpeg usa. Menos nucleos = menos calor.",
+        tk.Label(ic, text="Controla quantos nucleos o compressor usa. Menos nucleos = menos calor.",
                  font=("Segoe UI",8), bg=BG2, fg=TEXT_DIM, wraplength=255, justify="left"
                  ).grid(row=0, column=0, sticky="w", pady=(0,4))
         tk.Label(ic, text="CPU detectada: {} nucleo(s)".format(cpu_count),
