@@ -280,6 +280,8 @@ class VideoCompressorApp:
         btn_row.grid(row=0, column=0, sticky="ew", pady=(0,6))
         self._btn(btn_row, "+ Adicionar videos", self._add_files, ACCENT).pack(side="left")
         self._btn(btn_row, "x Remover", self._remove_selected, BG3).pack(side="left", padx=(8,0))
+        self.btn_check_update = self._btn(btn_row, "Verificar atualizacoes", self._manual_update_check, BG3)
+        self.btn_check_update.pack(side="left", padx=(8,0))
         self._btn(btn_row, "Limpar lista", self._clear_files, BG3).pack(side="right")
 
         sort_row = tk.Frame(parent, bg=BG)
@@ -439,14 +441,10 @@ class VideoCompressorApp:
         row2 = tk.Frame(il, bg=BG2)
         row2.grid(row=1, column=0, sticky="ew", pady=(6,0))
         row2.columnconfigure(0, weight=1)
-        row2.columnconfigure(1, weight=1)
 
         self.btn_show_folder = self._btn(row2, "Mostrar na pasta", self._show_output_folder, BG3, full=True)
-        self.btn_show_folder.grid(row=0, column=0, sticky="ew", padx=(0,4))
+        self.btn_show_folder.grid(row=0, column=0, sticky="ew")
         self.btn_show_folder.configure(state="disabled")
-
-        self.btn_check_update = self._btn(row2, "Verificar atualizacoes", self._manual_update_check, BG3, full=True)
-        self.btn_check_update.grid(row=0, column=1, sticky="ew", padx=(4,0))
 
         tk.Frame(parent, bg=BG, height=10).grid(row=7, column=0)
 
